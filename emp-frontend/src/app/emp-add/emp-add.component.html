@@ -1,0 +1,104 @@
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="angForm" novalidate>
+      <label class="col-md-3"><h4>Employee Details</h4></label>
+      <div class="form-group">
+        <label class="col-md-3">Employee Name</label>
+        <input type="text" formControlName="employee_name" #employee_name />
+      </div>
+        <div *ngIf="angForm.controls['employee_name'].invalid && (angForm.controls['employee_name'].dirty || angForm.controls['employee_name'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['employee_name'].errors.required">
+         Employee Name is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-3">Employee ID</label>
+        <input type="number" formControlName="eno" #eno />
+      </div>
+      <div *ngIf="angForm.controls['eno'].invalid && (angForm.controls['eno'].dirty || angForm.controls['eno'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['eno'].errors.required">
+         Employee Number is required.
+        </div>
+      </div>
+      <label class="col-md"><h4>Employee Metrics (0-10)</h4></label>
+      <div class="form-group">
+        <label class="col-md-3">Punctuality and Discipline</label>
+        <input type="number" min="0" max="10" formControlName="pnd" #pnd />
+      </div>
+      <div *ngIf="angForm.controls['pnd'].invalid && (angForm.controls['pnd'].dirty || angForm.controls['pnd'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['pnd'].errors.required">
+         The metric is a required value.
+        </div>
+        <div *ngIf="angForm.controls['pnd'].errors.min">
+         The metric can have a minimum value of 0.
+        </div>
+        <div *ngIf="angForm.controls['pnd'].errors.max">
+         The metric can have a maximum value of 10.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-3">Execution of Duties</label>
+        <input type="number" min="0" max="10" formControlName="eod" #eod />
+      </div>
+      <div *ngIf="angForm.controls['eod'].invalid && (angForm.controls['eod'].dirty || angForm.controls['eod'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['eod'].errors.required">
+         The metric is a required value.
+        </div>
+        <div *ngIf="angForm.controls['eod'].errors.min">
+         The metric can have a minimum value of 0.
+        </div>
+        <div *ngIf="angForm.controls['eod'].errors.max">
+         The metric can have a maximum value of 10.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-3">Learning and Development</label>
+        <input type="number" min="0" max="10" formControlName="lnd"#lnd />
+      </div>
+      <div *ngIf="angForm.controls['lnd'].invalid && (angForm.controls['lnd'].dirty || angForm.controls['lnd'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['lnd'].errors.required">
+         The metric is a required value.
+        </div>
+        <div *ngIf="angForm.controls['lnd'].errors.min">
+         The metric can have a minimum value of 0.
+        </div>
+        <div *ngIf="angForm.controls['lnd'].errors.max">
+         The metric can have a maximum value of 10.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-3">Team Cooperation</label>
+        <input type="number" min="0" max="10" formControlName="tc" #tc />
+      </div>
+      <div *ngIf="angForm.controls['tc'].invalid && (angForm.controls['tc'].dirty || angForm.controls['tc'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['tc'].errors.required">
+         The metric is a required value.
+        </div>
+        <div *ngIf="angForm.controls['tc'].errors.min">
+         The metric can have a minimum value of 0.
+        </div>
+        <div *ngIf="angForm.controls['tc'].errors.max">
+         The metric can have a maximum value of 10.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-3">Responsibility Taken </label>
+        <input type="number" min="0" max="10" formControlName="rt" #rt />
+      </div>
+      <div *ngIf="angForm.controls['rt'].invalid && (angForm.controls['rt'].dirty || angForm.controls['rt'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['rt'].errors.required">
+         The metric is a required value.
+        </div>
+        <div *ngIf="angForm.controls['rt'].errors.min">
+         The metric can have a minimum value of 0.
+        </div>
+        <div *ngIf="angForm.controls['rt'].errors.max">
+         The metric can have a maximum value of 10.
+        </div>
+      </div>
+      <div class="form-group">
+        <button type="button" (click)="addemployee(employee_name.value, eno.value, pnd.value, eod.value, lnd.value, tc.value, rt.value)"[disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary">Add Employee</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<br>
+<div *ngIf="chart" style="position: relative; height:75vh; width:75vw">
+  <canvas id="canvas" height="100" width="100">{{ chart }}</canvas>
+</div>
+<br><br>
+<div class="row justify-content-center">
+  <button (click) = "generatePDF()" class="btn btn-primary">Download PDF</button>
+</div>
+<br>
+<br>
+<br>
+<br>
