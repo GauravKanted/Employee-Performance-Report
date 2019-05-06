@@ -1,0 +1,4 @@
+﻿{
+    "connectionString": "mongodb://localhost/employee",
+    "secret": "SIAM-GAURAV KANTED STRING TO SIGN AND VERIFY JWT TOKENS"
+}
